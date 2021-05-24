@@ -25,7 +25,7 @@ function Navigation({ isLoaded }){
 
   return (
     <nav className={styles.navbar} >
-      <NavLink className={styles.navbarlogo} exact to="/">Bagel Rise</NavLink>
+      <NavLink className={styles.navbarlogo} exact to="/">Bagel Rise 🥯</NavLink>
       <ul className={styles.navmenu}>
         <li className={styles.navitem}>
           {isLoaded && sessionLinks}

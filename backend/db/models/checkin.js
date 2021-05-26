@@ -27,7 +27,7 @@ module.exports = (sequelize, DataTypes) => {
   Checkin.associate = function(models) {
     // associations can be defined here
     Checkin.belongsTo(models.User, { foreignKey: 'userId' });
-    Checkin.hasOne(models.BagelList, { foreignKey: 'listId' });
+    Checkin.belongsTo(models.BagelList, { foreignKey: 'listId' });
   };
   return Checkin;
 };

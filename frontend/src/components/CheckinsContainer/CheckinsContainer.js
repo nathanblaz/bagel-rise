@@ -20,14 +20,15 @@ console.log('Checkins be here:', checkins);
   }, [dispatch]);
 
   return (
+    
     <div className={styles.tableContainer}>
       <table className={styles.table}>
         <thead className={styles.thead}>
-          <tr>
-            <th>Checkin No.</th>
-            <th>Checkin's Name</th>
-            <th>Checkin's Email</th>
-          </tr>
+          {/* <tr>
+            <th>Avatar</th>
+            <th>Review</th>
+            <th>Rating</th>
+          </tr> */}
         </thead>
         <tbody className={styles.tbody}>
           {checkins.map((checkin) => <CheckinRow key={checkin.id} checkin={checkin} />)}

@@ -1,0 +1,34 @@
+.avatarTd,
+.ratingTd {
+  vertical-align: top;
+}
+
+.avatar {
+  object-fit: cover;
+  border-radius: 50%;
+  width: 52px;
+  height: 52px;
+}
+
+.checkinDiv {
+}
+
+.checkinDiv a {
+  color: #f2545bff;
+}
+.reviewDiv {
+  padding: 15px 20px;
+  margin-top: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+.photoDiv {
+}
+
+.photo {
+  max-width: 100%;
+  height: auto;
+}

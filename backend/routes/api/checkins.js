@@ -11,7 +11,7 @@ const { Checkin } = require("../../db/models");
 router.get(
   "",
   asyncHandler(async (req, res) => {
-    const checkins = await Checkin.findAll();
+    const checkins = await Checkin.findAll({ include: { all: true, nested: true }});
     res.json(checkins);
   })
 );

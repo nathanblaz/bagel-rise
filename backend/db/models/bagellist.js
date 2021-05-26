@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
     }, {});
   BagelList.associate = function(models) {
     // associations can be defined here
-    BagelList.belongsTo(models.Checkin, { foreignKey: 'listId' });
+    BagelList.hasOne(models.Checkin, { foreignKey: 'listId' });
     BagelList.belongsTo(models.BagelShop, { foreignKey: 'shopId' });
     BagelList.belongsTo(models.Bagel, { foreignKey: 'bagelId' });
   };

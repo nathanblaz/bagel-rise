@@ -18,9 +18,15 @@ module.exports = {
         allowNull: false,
         unique: true,
       },
+      bio: {
+        type: Sequelize.TEXT
+      },
       hashedPassword: {
         type: Sequelize.STRING.BINARY,
         allowNull: false,
+      },
+      avatar: {
+        type: Sequelize.TEXT
       },
       createdAt: {
         allowNull: false,

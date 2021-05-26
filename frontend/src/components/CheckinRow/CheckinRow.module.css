@@ -1,6 +1,19 @@
+/* color palette 
+
+--sizzling-red: #f2545bff;
+--amaranth-purple: #a93f55ff;
+--gunmetal: #19323cff;
+--mint-cream: #f3f7f0ff;
+--rose-taupe: #8c5e58ff;
+
+*/
+
 .avatarTd,
 .ratingTd {
   vertical-align: top;
+}
+
+.ratingTd {
 }
 
 .avatar {
@@ -11,18 +24,33 @@
 }
 
 .checkinDiv {
+  padding: 15px 20px;
 }
 
 .checkinDiv a {
   color: #f2545bff;
 }
+
+.ratingDiv {
+  color: white;
+  background-color: #a93f55ff;
+  padding: 18px 20px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  width: 100%;
+  border-radius: 10px;
+}
+
 .reviewDiv {
   padding: 15px 20px;
   margin-top: 8px;
   margin-bottom: 15px;
-  border: 1px solid #ccc;
+  max-width: 450px;
+  /* border: 1px solid #19323cff; */
+  color: #19323cff;
   border-radius: 8px;
   box-sizing: border-box;
+  background-color: #f3f7f0ff;
 }
 
 .photoDiv {

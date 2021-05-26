@@ -21,18 +21,20 @@ const CheckinRow = ({ checkin }) => {
       </td>
       <td>
         <div className={styles.checkinDiv}>
-          <Link>{checkin.User.username}</Link> is eating a <Link>{checkin.BagelList.Bagel.bagelType}</Link> bagel by <Link>{checkin.BagelList.BagelShop.name}</Link>, in {checkin.BagelList.BagelShop.city}, {checkin.BagelList.BagelShop.state}
+          <Link>{checkin.User.username}</Link> is eating a <Link>{checkin.BagelList.Bagel.bagelType}</Link> bagel by <Link>{checkin.BagelList.BagelShop.name}</Link>, in {checkin.BagelList.BagelShop.city}, {checkin.BagelList.BagelShop.state}.
         </div>
         <div className={styles.reviewDiv}>
         {checkin.review}
         </div>
         <div className={styles.photoDiv}>
           <img className={styles.photo} src={checkin.image} ></img>
+          <br></br>
         </div>
       </td>
       <td className={styles.ratingTd}>
-        Rating: {checkin.rating}
-        {/* <img className={styles.photo} src={checkin.image} ></img> */}
+        <div className={styles.ratingDiv}>
+        {checkin.rating}/5
+        </div>
       </td>
     </tr>
   );

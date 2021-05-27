@@ -7,6 +7,7 @@ import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import CheckinsContainer from "./components/CheckinsContainer/CheckinsContainer";
 import SplashContainer from "./components/SplashContainer";
+import BagelShopForm from "./components/BagelShopForm";
 
 function App() {
   const dispatch = useDispatch();
@@ -31,6 +32,9 @@ function App() {
           </Route>
           <Route path="/thedeli">
             <CheckinsContainer />
+          </Route>
+          <Route path="/bagelshops/add">
+            <BagelShopForm />
           </Route>
         </Switch>
       )}

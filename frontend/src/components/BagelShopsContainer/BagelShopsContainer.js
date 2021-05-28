@@ -24,11 +24,17 @@ const bagelShops = useSelector((state) => Object.values(state.bagelShops));
     <div className={styles.tableContainer}>
       <table className={styles.table}>
         <thead className={styles.thead}>
-          {/* <tr>
-            <th>Avatar</th>
-            <th>Review</th>
-            <th>Rating</th>
-          </tr> */}
+          <tr>
+            <th>Shop</th>
+            <th>Address</th>
+            <th>City</th>
+            <th>State</th>
+            <th>Zip</th>
+            <th>Phone</th>
+            <th>Information</th>
+            <th>Edit</th>
+            <th>Delete</th>
+          </tr>
         </thead>
         <tbody className={styles.tbody}>
           {bagelShops.map((bagelShop) => <BagelShopsRow key={bagelShop.id} bagelShop={bagelShop} />)}

@@ -9,6 +9,8 @@ import CheckinsContainer from "./components/CheckinsContainer/CheckinsContainer"
 import SplashContainer from "./components/SplashContainer";
 import BagelShopForm from "./components/BagelShopForm";
 import BagelShopsContainer from "./components/BagelShopsContainer";
+import BagelShopUpdateForm from "./components/BagelShopUpdateForm";
+import DeleteBagelShop from "./components/DeleteBagelShop";
 
 function App() {
   const dispatch = useDispatch();
@@ -39,6 +41,12 @@ function App() {
           </Route>
           <Route path="/bagelshops/add">
             <BagelShopForm />
+          </Route>
+          <Route path="/bagelshops/update/:id">
+            <BagelShopUpdateForm />
+          </Route>
+          <Route path="/bagelshops/delete/:id">
+            <DeleteBagelShop />
           </Route>
         </Switch>
       )}

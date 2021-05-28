@@ -24,11 +24,41 @@ const BagelShopRow = ({ bagelShop }) => {
         {bagelShop.name}
       </td>
       <td>
+        {bagelShop.address}
+      </td>
+      <td>
+        <div>
         {bagelShop.city}
+        </div>
       </td>
       <td>
         <div>
         {bagelShop.state}
+        </div>
+      </td>
+      <td>
+        <div>
+        {bagelShop.zipcode}
+        </div>
+      </td>
+      <td>
+        <div>
+        {bagelShop.phone}
+        </div>
+      </td>
+      <td>
+        <div>
+        {bagelShop.information}
+        </div>
+      </td>
+      <td>
+        <div>
+          <Link to={`bagelshops/update/${bagelShop.id}`}>Edit</Link>
+        </div>
+      </td>
+      <td>
+        <div>
+          <Link to={`bagelshops/delete/${bagelShop.id}`}>Delete</Link>
         </div>
       </td>
     </tr>

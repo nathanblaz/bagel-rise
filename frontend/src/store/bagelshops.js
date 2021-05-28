@@ -1,8 +1,8 @@
 import { csrfFetch } from "./csrf";
 
 // Define Action Types as Constants
-const ADD_BAGELSHOP = "checkins/ADD_BAGELSHOP";
-const GET_BAGELSHOPS = "checkins/GET_BAGELSHOPS";
+const ADD_BAGELSHOP = "bagelshops/ADD_BAGELSHOP";
+const GET_BAGELSHOPS = "bagelshops/GET_BAGELSHOPS";
 
 // Define Action Creators
 const getBagelShop = (bagelShops) => ({
@@ -61,9 +61,9 @@ const bagelShopsReducer = (state = initialState, action) => {
         return newState;
     }  
     case GET_BAGELSHOPS:
-      const newState = { ...state };
-      action.bagelShops.forEach((bagelShop) => {
-        newState[bagelShop.id] = bagelShop;
+      const newState = { };
+      action.bagelShops?.forEach((bagelShop) => {
+        newState[bagelShop?.id] = bagelShop;
       });
       return newState;
     default:

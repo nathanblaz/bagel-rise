@@ -4,11 +4,13 @@ import thunk from "redux-thunk";
 // Import reducers here
 import sessionReducer from './session';
 import checkinsReducer from './checkins';
+import bagelShopsReducer from './bagelshops';
 
 const rootReducer = combineReducers({
   // Add reducers to the store here
   session: sessionReducer,
   checkins: checkinsReducer,
+  bagelShops: bagelShopsReducer,
 });
 
 let enhancer;

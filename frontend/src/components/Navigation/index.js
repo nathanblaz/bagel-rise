@@ -13,6 +13,7 @@ function Navigation({ isLoaded }){
     sessionLinks = (
       <>
         <NavLink className={styles.navlinks} to="/thedeli">The Deli</NavLink>
+        <NavLink className={styles.navlinks} to="/bagelshops">Top Rated Shops</NavLink>
         <NavLink className={styles.navlinks} to="/bagelshops/add">Add A Bagel Shop</NavLink>
         <ProfileButton user={sessionUser} />
       </>
@@ -21,7 +22,6 @@ function Navigation({ isLoaded }){
     sessionLinks = (
       <>
         <NavLink className={styles.navlinks} to="/thedeli">The Deli</NavLink>
-        <NavLink className={styles.navlinks} to="/bagelshops">Top Rated Shops</NavLink>
         <NavLink className={styles.navlinks} to="/login">Log In</NavLink>
         <NavLink className={styles.navlinks} to="/signup">Sign Up</NavLink>
         {/* <LoginFormModal /> */}

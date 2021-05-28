@@ -1,0 +1,25 @@
+/* color palette 
+
+--sizzling-red: #f2545bff;
+--amaranth-purple: #a93f55ff;
+--gunmetal: #19323cff;
+--mint-cream: #f3f7f0ff;
+--rose-taupe: #8c5e58ff;
+
+*/
+
+.splashcontainer {
+  background-color: #19323cff;
+  height: 100%;
+}
+
+.slogan {
+  color: #f3f7f0ff;
+  text-align: center;
+  font-size:2em;
+  padding: 50px;
+}
+
+img {
+  max-width: 100%;
+}

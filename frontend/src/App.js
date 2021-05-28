@@ -6,6 +6,9 @@ import SignupFormPage from "./components/SignupFormPage";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import CheckinsContainer from "./components/CheckinsContainer/CheckinsContainer";
+import SplashContainer from "./components/SplashContainer";
+import BagelShopForm from "./components/BagelShopForm";
+import BagelShopsContainer from "./components/BagelShopsContainer";
 
 function App() {
   const dispatch = useDispatch();
@@ -19,6 +22,9 @@ function App() {
       <Navigation isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>
+          <Route path="/" exact>
+            <SplashContainer />
+          </Route>
           <Route path="/login">
             <LoginFormPage />
           </Route>
@@ -27,6 +33,12 @@ function App() {
           </Route>
           <Route path="/thedeli">
             <CheckinsContainer />
+          </Route>
+          <Route path="/bagelshops" exact>
+            <BagelShopsContainer />
+          </Route>
+          <Route path="/bagelshops/add">
+            <BagelShopForm />
           </Route>
         </Switch>
       )}

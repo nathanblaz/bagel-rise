@@ -1,13 +1,24 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import * as bagelShopsActions from "../../store/bagelshops";
 import { useDispatch, useSelector } from "react-redux";
 import styles from "./BagelShopUpdateForm.module.css";
-import { useParams } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
+import {getBagelShopOne} from "../../store/bagelshops";
 
 const BagelShopUpdateForm = () => {
   const dispatch = useDispatch();
   const { id } = useParams();
-  console.log("id is:", id);
+  const history = useHistory();
+  console.log('THIS is the id in the component!!!!!!!', id);
+  console.log('THIS is the typeof id in the component!!!!!!!', typeof id);
+
+  const numId = +id;
+  console.log('THIS is the numId in the component!!!', numId);
+  console.log('THIS is the typeof numId in the component!!!', typeof numId);
+
+  useEffect(() => {
+    dispatch(getBagelShopOne(+id))
+  }, [dispatch, +id]);
 
   const bagelShopState = useSelector((state) => state.bagelShops);
 
@@ -20,7 +31,13 @@ const BagelShopUpdateForm = () => {
   const [information, setInformation] = useState("");
   const [errors, setErrors] = useState([]);
 
-  //   if (sessionUser) return <Redirect to="/" />;
+  const updateName = (e) => setName(e.target.value);
+  const updateAddress = (e) => setAddress(e.target.value);
+  const updateCity = (e) => setCity(e.target.value);
+  const updateState = (e) => setState(e.target.value);
+  const updateZipcode = (e) => setZipcode(e.target.value);
+  const updatePhone = (e) => setPhone(e.target.value);
+  const updateInformation = (e) => setInformation(e.target.value);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -28,7 +45,7 @@ const BagelShopUpdateForm = () => {
     setErrors([]);
     return dispatch(
       bagelShopsActions.updateBagelShop({
-        id,
+        id: +id,
         name,
         address,
         city,
@@ -38,7 +55,7 @@ const BagelShopUpdateForm = () => {
         information,
       })
     ).catch(async (res) => {
-      console.log("id", id);
+      console.log("id", +id);
       console.log("name", name);
       console.log("res.statusText", res.statusText);
 
@@ -65,27 +82,27 @@ const BagelShopUpdateForm = () => {
             type="text"
             required
             value={name}
-            onChange={(e) => setName(e.target.value)}
+            onChange={updateName}
           />
           <label>Address</label>
           <input
             type="text"
             value={address}
-            onChange={(e) => setAddress(e.target.value)}
+            onChange={updateAddress}
           />
           <label>City (required)</label>
           <input
             type="text"
             required
             value={city}
-            onChange={(e) => setCity(e.target.value)}
+            onChange={updateCity}
           />
           <label>State (required)</label>
           <select
             name="state"
             id="state"
             value={state}
-            onChange={(e) => setState(e.target.value)}
+            onChange={updateState}
           >
             <option value="AL">Alabama</option>
             <option value="AK">Alaska</option>
@@ -148,16 +165,16 @@ const BagelShopUpdateForm = () => {
           <input
             type="text"
             value={zipcode}
-            onChange={(e) => setZipcode(e.target.value)}
+            onChange={updateZipcode}
           />
           <label>Phone</label>
           <input
             type="text"
             value={phone}
-            onChange={(e) => setPhone(e.target.value)}
+            onChange={updatePhone}
           />
           <label>Information</label>
-          <input type="text" value={information} onChange={(e) => setInformation(e.target.value)}/>
+          <input type="text" value={information} onChange={updateInformation}/>
           <button id={styles.confirmBtn} type="submit">
             Confirm
           </button>

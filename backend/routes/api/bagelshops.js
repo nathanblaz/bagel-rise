@@ -32,8 +32,34 @@ router.post(
   }) 
 );
 
-// Delete route
+// PUT
+router.put(
+  "/update/:id",
+  asyncHandler(async (req, res) => {
+    const { id, name, address, city, state, zipcode, phone, information } = req.body;
+    const numId = +id;
+    const bagelShop = await BagelShop.findByPk(numId);
+    console.log('Big old FLAAAAAAAAAAAAAG', bagelShop);
 
+    const updatedBagelShop = await bagelShop.update({ numId, name, address, city, state, zipcode, phone, information});
+    console.log('*************************', updatedBagelShop);
+    return res.json(updatedBagelShop);
+  })
+);
+
+// Delete route
+router.delete(
+  "/delete/:id",
+  asyncHandler(async (req, res) => {
+    const bagelShopId = parseInt(req.params.id, 10);
+    console.log('*** bagelShopId at the backend is:', bagelShopId);
+
+    const bagelShop = await BagelShop.findByPk(bagelShopId);
+
+    await bagelShop.destroy();
+    return res.json('Successfully deleted');
+  })
+);
 
 // Export the router
 module.exports = router;

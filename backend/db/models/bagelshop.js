@@ -3,6 +3,12 @@ module.exports = (sequelize, DataTypes) => {
   const BagelShop = sequelize.define(
     'BagelShop',
     {
+      id: {
+        allowNull: false,
+        primaryKey: true,
+        autoIncrement: true,
+        type: DataTypes.INTEGER
+      },
       name: {
         allowNull: false,
         type: DataTypes.STRING,

@@ -53,12 +53,12 @@ const BagelShopRow = ({ bagelShop }) => {
       </td>
       <td>
         <div>
-          <button>Edit</button>
+          <Link to={`bagelshops/update/${bagelShop.id}`}>Edit</Link>
         </div>
       </td>
       <td>
         <div>
-          <button>Delete</button>
+          <Link to={`bagelshops/delete/${bagelShop.id}`}>Delete</Link>
         </div>
       </td>
     </tr>

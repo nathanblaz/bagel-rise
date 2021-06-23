@@ -12,7 +12,7 @@ Discover and share your favorite bagels.
 
 ### Bonus
 
-- User Profile
+- User Profile (WIP)
 
 ## Schema
 

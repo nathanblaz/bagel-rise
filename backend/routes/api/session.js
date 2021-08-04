@@ -9,7 +9,7 @@ const { handleValidationErrors } = require("../../utils/validation");
 
 const router = express.Router();
 
-// Validate login request middleware 
+// Validate login request middleware
 
 const validateLogin = [
   check("credential")
@@ -43,6 +43,20 @@ router.post(
 
     return res.json({
       user,
+    });
+  })
+);
+
+// Demo login
+router.post(
+  "/demo",
+  asyncHandler(async (req, res) => {
+    // Look up a user from seeded data
+    const demoUser = await User.findByPk(1);
+    await setTokenCookie(res, demoUser);
+
+    return res.json({
+      demoUser,
     });
   })
 );

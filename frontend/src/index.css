@@ -1,8 +1,16 @@
 /* TODO Add site wide styles */
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: sans-serif;
-  }
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::after {
+  box-sizing: inherit;
+  font-family: sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}

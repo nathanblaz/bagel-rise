@@ -5,6 +5,7 @@ import LoginFormPage from "./components/LoginFormPage";
 import SignupFormPage from "./components/SignupFormPage";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
+import ProtectedRoute from "./components/Auth/ProtectedRoute";
 import CheckinsContainer from "./components/CheckinsContainer/CheckinsContainer";
 import SplashContainer from "./components/SplashContainer";
 import BagelShopForm from "./components/BagelShopForm";
@@ -33,21 +34,21 @@ function App() {
           <Route path="/signup">
             <SignupFormPage />
           </Route>
-          <Route path="/thedeli">
+          <ProtectedRoute path="/thedeli">
             <CheckinsContainer />
-          </Route>
+          </ProtectedRoute>
           <Route path="/bagelshops" exact>
             <BagelShopsContainer />
           </Route>
-          <Route path="/bagelshops/add">
+          <ProtectedRoute path="/bagelshops/add" exact={true}>
             <BagelShopForm />
-          </Route>
-          <Route path="/bagelshops/update/:id">
+          </ProtectedRoute>
+          <ProtectedRoute path="/bagelshops/update/:id">
             <BagelShopUpdateForm />
-          </Route>
-          <Route path="/bagelshops/delete/:id">
+          </ProtectedRoute>
+          <ProtectedRoute path="/bagelshops/delete/:id">
             <DeleteBagelShop />
-          </Route>
+          </ProtectedRoute>
         </Switch>
       )}
     </>

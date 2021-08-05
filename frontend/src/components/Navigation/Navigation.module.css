@@ -8,16 +8,14 @@
 
 */
 
-
 .navbar {
-	/* margin: 50px 0; */
-	background-color: #19323cff;
+  /* margin: 50px 0; */
+  background-color: #19323cff;
   height: 68px;
   display: flex;
   justify-content: center;
   align-items: center;
   /* position: relative; */
-  
 }
 
 .navbarlogo {
@@ -60,13 +58,27 @@
   transition: all 0.2s ease-out;
 }
 
+#demobutton {
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border: 0;
+  border-radius: 4px;
+  color: white;
+  background-color: #a93f55ff;
+}
+
+#demobutton:hover {
+  background-color: #f2545bff;
+  cursor: pointer;
+  transition: all 0.2s ease-out;
+}
+
 .navitem a {
   /* float: left; */
   /* text-align: center; */
   /* padding: 14px 16px; */
   /* font-size: 17px; */
 }
-
 
 #navitem a.active {
   /* background-color: #a93f55ff; */

@@ -1,0 +1,50 @@
+/* 
+#2896b8 accent color
+*/
+
+.footer {
+  background-color: #19323cff;
+  height: 50px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.about-logos {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100%;
+}
+
+.about-logos a {
+  color: white;
+}
+
+.user-object--avi {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  grid-area: image;
+}
+
+.footer-items {
+  font-size: 24pt;
+}
+
+.credit {
+  display: flex;
+  flex-direction: row;
+  /* justify-content: center; */
+  align-items: center;
+}
+
+.footer-text {
+  justify-content: space-between;
+  padding-left: 8px;
+  /* align-items: center; */
+  font-size: 12pt;
+  color: white;
+}

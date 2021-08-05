@@ -6,6 +6,7 @@ import SignupFormPage from "./components/SignupFormPage";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import ProtectedRoute from "./components/Auth/ProtectedRoute";
+import Footer from "./components/Footer";
 import CheckinsContainer from "./components/CheckinsContainer/CheckinsContainer";
 import SplashContainer from "./components/SplashContainer";
 import BagelShopForm from "./components/BagelShopForm";
@@ -24,32 +25,35 @@ function App() {
     <>
       <Navigation isLoaded={isLoaded} />
       {isLoaded && (
-        <Switch>
-          <Route path="/" exact>
-            <SplashContainer />
-          </Route>
-          <Route path="/login">
-            <LoginFormPage />
-          </Route>
-          <Route path="/signup">
-            <SignupFormPage />
-          </Route>
-          <ProtectedRoute path="/thedeli">
-            <CheckinsContainer />
-          </ProtectedRoute>
-          <Route path="/bagelshops" exact>
-            <BagelShopsContainer />
-          </Route>
-          <ProtectedRoute path="/bagelshops/add" exact={true}>
-            <BagelShopForm />
-          </ProtectedRoute>
-          <ProtectedRoute path="/bagelshops/update/:id">
-            <BagelShopUpdateForm />
-          </ProtectedRoute>
-          <ProtectedRoute path="/bagelshops/delete/:id">
-            <DeleteBagelShop />
-          </ProtectedRoute>
-        </Switch>
+        <>
+          <Switch>
+            <Route path="/" exact>
+              <SplashContainer />
+            </Route>
+            <Route path="/login">
+              <LoginFormPage />
+            </Route>
+            <Route path="/signup">
+              <SignupFormPage />
+            </Route>
+            <ProtectedRoute path="/thedeli">
+              <CheckinsContainer />
+            </ProtectedRoute>
+            <Route path="/bagelshops" exact>
+              <BagelShopsContainer />
+            </Route>
+            <ProtectedRoute path="/bagelshops/add" exact={true}>
+              <BagelShopForm />
+            </ProtectedRoute>
+            <ProtectedRoute path="/bagelshops/update/:id">
+              <BagelShopUpdateForm />
+            </ProtectedRoute>
+            <ProtectedRoute path="/bagelshops/delete/:id">
+              <DeleteBagelShop />
+            </ProtectedRoute>
+          </Switch>
+          <Footer />
+        </>
       )}
     </>
   );

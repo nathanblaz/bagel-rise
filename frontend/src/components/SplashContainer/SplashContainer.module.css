@@ -9,14 +9,17 @@
 */
 
 .splashcontainer {
-  background-color: #19323cff;
-  height: 100%;
+  color: #f3f7f0ff;
+  position: absolute;
+  height: 100vh;
+  z-index: -1;
 }
 
 .slogan {
+  position: absolute;
   color: #f3f7f0ff;
   text-align: center;
-  font-size:2em;
+  font-size: 2rem;
   padding: 50px;
 }
 

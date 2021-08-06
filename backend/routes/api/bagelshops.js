@@ -15,6 +15,7 @@ const { handleValidationErrors } = require("../../utils/validation");
 // TODO limit search results to a specified amount
 router.get(
   "/",
+  requireAuth,
   asyncHandler(async (req, res) => {
     const bagelShops = await BagelShop.findAll();
     res.json(bagelShops);
@@ -23,6 +24,7 @@ router.get(
 
 router.get(
   "/:id",
+  requireAuth,
   asyncHandler(async (req, res) => {
     let id = req.params.id;
     id = parseInt(id, 10);
@@ -31,10 +33,10 @@ router.get(
   })
 );
 
-
 // POST route
 router.post(
   "/add",
+  requireAuth,
   asyncHandler(async (req, res) => {
     const { name, address, city, state, zipcode, phone, information } =
       req.body;
@@ -55,15 +57,16 @@ router.post(
 // Update route
 router.put(
   "/update/:id",
+  requireAuth,
   asyncHandler(async (req, res) => {
-    console.log('is this undefined also?', req.body.id);
+    console.log("is this undefined also?", req.body.id);
     const { id, name, address, city, state, zipcode, phone, information } =
       req.body;
     // const numId = +id;
     // const { id } = req.params;
-    console.log('what is my ID here???', id);
+    console.log("what is my ID here???", id);
     const bagelShop = await BagelShop.findByPk(id);
-    console.log('Big old FLAAAAAAAAAAAAAG', bagelShop);
+    console.log("Big old FLAAAAAAAAAAAAAG", bagelShop);
 
     const updatedBagelShop = await bagelShop.update(
       { id, name, address, city, state, zipcode, phone, information },
@@ -77,6 +80,7 @@ router.put(
 // Delete route
 router.delete(
   "/delete/:id",
+  requireAuth,
   asyncHandler(async (req, res) => {
     const bagelShopId = parseInt(req.params.id, 10);
     console.log("*** bagelShopId at the backend is:", bagelShopId);
@@ -84,7 +88,7 @@ router.delete(
     const bagelShop = await BagelShop.findByPk(bagelShopId);
 
     await bagelShop.destroy();
-    return res.json({ hello: "Successfully deleted"});
+    return res.json({ hello: "Successfully deleted" });
   })
 );
 

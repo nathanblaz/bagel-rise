@@ -3,7 +3,7 @@ import styles from "./BagelShopsRow.module.css";
 
 const BagelShopRow = ({ bagelShop }) => {
   const queryString = new URLSearchParams(useLocation().search).get("q") ?? "";
-  console.log(bagelShop);
+  // console.log(bagelShop);
   if (
     !(
       bagelShop.name.includes(queryString) ||
@@ -20,36 +20,22 @@ const BagelShopRow = ({ bagelShop }) => {
 
   return (
     <tr>
+      <td>{bagelShop.name}</td>
+      <td>{bagelShop.address}</td>
       <td>
-        {bagelShop.name}
+        <div>{bagelShop.city}</div>
       </td>
       <td>
-        {bagelShop.address}
+        <div>{bagelShop.state}</div>
       </td>
       <td>
-        <div>
-        {bagelShop.city}
-        </div>
+        <div>{bagelShop.zipcode}</div>
       </td>
       <td>
-        <div>
-        {bagelShop.state}
-        </div>
+        <div>{bagelShop.phone}</div>
       </td>
       <td>
-        <div>
-        {bagelShop.zipcode}
-        </div>
-      </td>
-      <td>
-        <div>
-        {bagelShop.phone}
-        </div>
-      </td>
-      <td>
-        <div>
-        {bagelShop.information}
-        </div>
+        <div>{bagelShop.information}</div>
       </td>
       <td>
         <div>

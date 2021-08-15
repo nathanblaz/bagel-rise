@@ -59,20 +59,20 @@ router.put(
   "/update/:id",
   requireAuth,
   asyncHandler(async (req, res) => {
-    console.log("is this undefined also?", req.body.id);
+    // console.log("is this undefined also?", req.body.id);
     const { id, name, address, city, state, zipcode, phone, information } =
       req.body;
     // const numId = +id;
     // const { id } = req.params;
-    console.log("what is my ID here???", id);
+    // console.log("what is my ID here???", id);
     const bagelShop = await BagelShop.findByPk(id);
-    console.log("Big old FLAAAAAAAAAAAAAG", bagelShop);
+    // console.log("Big old FLAAAAAAAAAAAAAG", bagelShop);
 
     const updatedBagelShop = await bagelShop.update(
       { id, name, address, city, state, zipcode, phone, information },
       { where: { id } }
     );
-    console.log("*************************", updatedBagelShop);
+    // console.log("*************************", updatedBagelShop);
     return res.json(updatedBagelShop);
   })
 );
@@ -83,7 +83,7 @@ router.delete(
   requireAuth,
   asyncHandler(async (req, res) => {
     const bagelShopId = parseInt(req.params.id, 10);
-    console.log("*** bagelShopId at the backend is:", bagelShopId);
+    // console.log("*** bagelShopId at the backend is:", bagelShopId);
 
     const bagelShop = await BagelShop.findByPk(bagelShopId);
 

@@ -3,21 +3,21 @@ import * as bagelShopsActions from "../../store/bagelshops";
 import { useDispatch, useSelector } from "react-redux";
 import styles from "./BagelShopUpdateForm.module.css";
 import { useParams, useHistory } from "react-router-dom";
-import {getBagelShopOne} from "../../store/bagelshops";
+import { getBagelShopOne } from "../../store/bagelshops";
 
 const BagelShopUpdateForm = () => {
   const dispatch = useDispatch();
   const { id } = useParams();
   const history = useHistory();
-  console.log('THIS is the id in the component!!!!!!!', id);
-  console.log('THIS is the typeof id in the component!!!!!!!', typeof id);
+  // console.log('THIS is the id in the component!!!!!!!', id);
+  // console.log('THIS is the typeof id in the component!!!!!!!', typeof id);
 
   const numId = +id;
-  console.log('THIS is the numId in the component!!!', numId);
-  console.log('THIS is the typeof numId in the component!!!', typeof numId);
+  // console.log('THIS is the numId in the component!!!', numId);
+  // console.log('THIS is the typeof numId in the component!!!', typeof numId);
 
   useEffect(() => {
-    dispatch(getBagelShopOne(+id))
+    dispatch(getBagelShopOne(+id));
   }, [dispatch, +id]);
 
   const bagelShopState = useSelector((state) => state.bagelShops);
@@ -41,7 +41,7 @@ const BagelShopUpdateForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('something really obnoxious');
+    // console.log('something really obnoxious');
     setErrors([]);
     return dispatch(
       bagelShopsActions.updateBagelShop({
@@ -55,9 +55,9 @@ const BagelShopUpdateForm = () => {
         information,
       })
     ).catch(async (res) => {
-      console.log("id", +id);
-      console.log("name", name);
-      console.log("res.statusText", res.statusText);
+      // console.log("id", +id);
+      // console.log("name", name);
+      // console.log("res.statusText", res.statusText);
 
       const data = await res.json();
       if (data && data.errors) setErrors(data.errors);
@@ -78,32 +78,13 @@ const BagelShopUpdateForm = () => {
         </ul>
         <div className={styles.bagelShopFormInputContainer}>
           <label>Shop Name (required)</label>
-          <input
-            type="text"
-            required
-            value={name}
-            onChange={updateName}
-          />
+          <input type="text" required value={name} onChange={updateName} />
           <label>Address</label>
-          <input
-            type="text"
-            value={address}
-            onChange={updateAddress}
-          />
+          <input type="text" value={address} onChange={updateAddress} />
           <label>City (required)</label>
-          <input
-            type="text"
-            required
-            value={city}
-            onChange={updateCity}
-          />
+          <input type="text" required value={city} onChange={updateCity} />
           <label>State (required)</label>
-          <select
-            name="state"
-            id="state"
-            value={state}
-            onChange={updateState}
-          >
+          <select name="state" id="state" value={state} onChange={updateState}>
             <option value="AL">Alabama</option>
             <option value="AK">Alaska</option>
             <option value="AS">American Samoa</option>
@@ -162,19 +143,11 @@ const BagelShopUpdateForm = () => {
             <option value="WY">Wyoming</option>
           </select>
           <label>Zipcode</label>
-          <input
-            type="text"
-            value={zipcode}
-            onChange={updateZipcode}
-          />
+          <input type="text" value={zipcode} onChange={updateZipcode} />
           <label>Phone</label>
-          <input
-            type="text"
-            value={phone}
-            onChange={updatePhone}
-          />
+          <input type="text" value={phone} onChange={updatePhone} />
           <label>Information</label>
-          <input type="text" value={information} onChange={updateInformation}/>
+          <input type="text" value={information} onChange={updateInformation} />
           <button id={styles.confirmBtn} type="submit">
             Confirm
           </button>

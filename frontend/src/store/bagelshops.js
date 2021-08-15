@@ -31,7 +31,7 @@ const deleteOneBagelShop = (bagelShopId) => ({
 export const getBagelShopsAll = () => async (dispatch) => {
   const res = await csrfFetch("/api/bagelshops");
   const bagelShops = await res.json();
-  console.log("thunk bagelShops", bagelShops);
+  // console.log("thunk bagelShops", bagelShops);
   if (res.ok) {
     dispatch(getBagelShop(bagelShops));
   }
@@ -43,11 +43,11 @@ export const getBagelShopOne = (id) => async (dispatch) => {
   if (res.ok) {
     dispatch(setBagelShop(bagelShops));
   }
-}
+};
 
 export const addBagelShop = (bagelShop) => async (dispatch) => {
   const { name, address, city, state, zipcode, phone, information } = bagelShop;
-  console.log("bagelShop is", bagelShop);
+  // console.log("bagelShop is", bagelShop);
 
   const response = await csrfFetch("/api/bagelshops/add", {
     method: "POST",
@@ -72,9 +72,9 @@ export const addBagelShop = (bagelShop) => async (dispatch) => {
 export const updateBagelShop = (bagelShop) => async (dispatch) => {
   // const { id, name, address, city, state, zipcode, phone, information } =
   //   bagelShop;
-  console.log("bagelShop is", bagelShop);
-  console.log("id is", bagelShop.id);
-  console.log("typeOf id is", typeof bagelShop.id);
+  // console.log("bagelShop is", bagelShop);
+  // console.log("id is", bagelShop.id);
+  // console.log("typeOf id is", typeof bagelShop.id);
   // id = parseInt(id, 10);
 
   const response = await csrfFetch(`/api/bagelshops/update/${bagelShop.id}`, {
@@ -82,11 +82,9 @@ export const updateBagelShop = (bagelShop) => async (dispatch) => {
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify(
-      bagelShop
-    ),
+    body: JSON.stringify(bagelShop),
   });
-  console.log('response is', response);
+  console.log("response is", response);
   if (response.ok) {
     const data = await response.json();
     dispatch(setBagelShop(data));
@@ -128,11 +126,11 @@ const bagelShopsReducer = (state = initialState, action) => {
         newState[bagelShop?.id] = bagelShop;
       });
       return newState;
-    case DELETE_BAGELSHOP: 
+    case DELETE_BAGELSHOP:
       const oldState = {
-        ...state
-      }
-      delete oldState[action.bagelShopId]
+        ...state,
+      };
+      delete oldState[action.bagelShopId];
       return oldState;
     default:
       return state;

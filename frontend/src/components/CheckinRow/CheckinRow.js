@@ -21,9 +21,9 @@ const CheckinRow = ({ checkin }) => {
       </td>
       <td>
         <div className={styles.checkinDiv}>
-          <Link>{checkin.User.username}</Link> is eating a{" "}
-          <Link>{checkin.BagelList.Bagel.bagelType}</Link> bagel by{" "}
-          <Link>{checkin.BagelList.BagelShop.name}</Link>, in{" "}
+          {checkin.User.username} is eating a{" "}
+          {checkin.BagelList.Bagel.bagelType} bagel by{" "}
+          {checkin.BagelList.BagelShop.name}, in{" "}
           {checkin.BagelList.BagelShop.city},{" "}
           {checkin.BagelList.BagelShop.state}.
         </div>

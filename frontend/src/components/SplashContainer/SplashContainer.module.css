@@ -12,6 +12,7 @@
   color: #f3f7f0ff;
   position: absolute;
   height: 100vh;
+  width: 100%;
   z-index: -1;
 }
 

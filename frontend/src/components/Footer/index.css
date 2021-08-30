@@ -48,3 +48,7 @@
   font-size: 12pt;
   color: white;
 }
+
+.footer-text a {
+  text-decoration: none;
+}

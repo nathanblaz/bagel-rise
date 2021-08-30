@@ -18,12 +18,16 @@ const Footer = () => {
           </a>
         </div>
         <div className="credit">
-          <img
-            className="user-object--avi"
-            src="https://avatars.githubusercontent.com/u/24424412?v=4"
-            alt="Nate"
-          />
-          <div className="footer-text">Built by Nathan Blaz</div>
+          <a href="https://nathanblaz.github.io/">
+            <img
+              className="user-object--avi"
+              src="https://avatars.githubusercontent.com/u/24424412?v=4"
+              alt="Nate"
+            />
+          </a>
+          <div className="footer-text">
+            <a href="https://nathanblaz.github.io/">Built by Nathan Blaz</a>
+          </div>
         </div>
       </div>
     </div>
